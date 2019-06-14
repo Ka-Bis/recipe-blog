@@ -1,0 +1,243 @@
+/* ========= GENERAL ========= */
+h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+
+p,
+a {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: rgb(224, 217, 217);
+
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: rgb(79, 73, 134);
+}
+
+.nott {
+    color: #fff;
+    font-size: 50px;
+}
+
+/* +++++ NAVBAR +++++ */
+#navbar {
+    background: white;
+    position: relative;
+    float: right;
+    right: 0;
+    /* margin-left: auto; */
+}
+
+#toggle-btn {
+    border: none;
+}
+
+.navbar-light .navbar-nav .nav-active {
+    color: #19692c !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: none;
+    /* text-decoration: underline!important; */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+}
+
+#search-toggle {
+    margin-left: auto;
+}
+
+.t {
+    float: left !important;
+    height: 100px;
+}
+
+/* ========= MAIN ========= */
+/* +++++ SIDEBAR +++++ */
+ul {
+    list-style: square inside;
+}
+
+.list-recipe ul,
+li {
+    padding: 5px;
+    text-transform: uppercase;
+
+}
+
+.list-recipe h2 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.sidebar {
+    background: rgba(240, 237, 237, 0.664);
+}
+
+.sidebar p {
+    text-align: center;
+    color: #000;
+    padding-bottom: 40px;
+    font-size: 14px;
+}
+
+.newsletter input {
+    font-family: 'Noto sans HK', sans-serif;
+}
+
+input [type="submit"] {
+    font-family: 'Noto sans HK', sans-serif;
+}
+
+.insta-feed h2 {
+    margin: 0 auto;
+}
+
+/* .newsletter {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+.newsletter input {
+    text-align: center;
+    border: none;
+    border-radius: none;
+    border-bottom: 1px solid rgb(184, 184, 184);
+    padding: 0.5em;
+    background: none;
+}
+
+.newsletter .btn {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #218838;
+    padding: 0.5em 1em;
+}
+
+.newsletter {
+    text-align: center;
+    padding: 0.5em 0;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-success {
+    font-family: 'Noto sans HK', sans-serif;
+} */
+
+.line {
+
+    position: relative;
+    width: 90%;
+    margin: 20px 0;
+    border-top: 1px solid rgb(201, 197, 197);
+}
+
+/* ======= */
+/* +++++ CARD RECIPE +++++ */
+.recipe {
+    border: none;
+    border-radius: 0 !important;
+    padding: 20px 10px;
+    background: 0 0;
+    /* margin: 0; */
+}
+
+.food-img {
+    max-width: 100%;
+    height: auto;
+}
+.card {
+    min-height: 100%;
+}
+.card-author,
+.card-title,
+.author {
+    text-transform: uppercase;
+}
+
+.card-author {
+    font-weight: 400;
+    color: rgba(146, 145, 145, 0.801)
+}
+
+.card-date {
+    float: left;
+    color: #dbdbdb;
+}
+
+.card-author a {
+    font-weight: 300;
+    color: rgb(23, 23, 97);
+}
+
+.card-title a {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.line-r {
+    position: relative;
+    width: 90%;
+    margin: 20px 0;
+    border-top: 1px solid rgb(201, 197, 197);
+}
+/* ======== */
+
+/* ========= FOOTER ========= */
+.footer {
+    margin-top: 1em;
+    text-align: center;
+    background: #dbdbdb;
+    padding: 2em 0;
+}
+
+/* ========= MEDIA QUERY ========= */
+@media(max-width:991px) {
+
+    /* <= Declenchement toggle */
+    #navbar {
+        float: none
+    }
+
+    #search-toggle {
+        margin-left: none;
+        position: absolute;
+        right: 1em;
+        top: 0.5em;
+
+    }
+
+    .line-r {
+        display: none;
+        overflow: hidden;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    /* .newsletter input {
+        border: 1px solid #000;
+        border-radius: 0px;
+        background: #fff;
+    } */
+}
