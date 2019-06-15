@@ -158,12 +158,18 @@ input [type="submit"] {
     border-radius: 0 !important;
     padding: 20px 10px;
     background: 0 0;
+    color:#fff;
+    text-align:center;
     /* margin: 0; */
+}
+.recipe cite{
+    margin-top:5px;
+    font-style: italic;
 }
 
 .food-img {
     max-width: 100%;
-    height: auto;
+    max-height: 60%;
 }
 .card {
     min-height: 100%;

@@ -1,0 +1,123 @@
+/* ========= GENERAL ========= */
+h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+
+p,
+a {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: rgb(224, 217, 217);
+
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: rgb(79, 73, 134);
+}
+
+.nott {
+    color: #fff;
+    font-size: 50px;
+}
+
+/* +++++ NAVBAR +++++ */
+#navbar {
+    background: white;
+    position: relative;
+    float: right;
+    right: 0;
+    /* margin-left: auto; */
+}
+
+#toggle-btn {
+    border: none;
+}
+
+.navbar-light .navbar-nav .nav-active {
+    color: #19692c !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: none;
+    /* text-decoration: underline!important; */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+}
+
+#search-toggle {
+    margin-left: auto;
+}
+
+.t {
+    float: left !important;
+    height: 100px;
+}
+
+/* ======== */
+#page-title {
+    background-image: linear-gradient(rgba(25, 26, 25, 0.63), rgba(102, 99, 105, 0.603)),
+        url(../img/food1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    padding: 250px 0;
+
+}
+
+
+/* ========= FOOTER ========= */
+.footer {
+    margin-top: 1em;
+    text-align: center;
+    background: #dbdbdb;
+    padding: 2em 0;
+}
+
+/* ========= MEDIA QUERY ========= */
+@media(max-width:991px) {
+
+    /* <= Declenchement toggle */
+    #navbar {
+        float: none
+    }
+
+    #search-toggle {
+        margin-left: none;
+        position: absolute;
+        right: 1em;
+        top: 0.5em;
+
+    }
+
+    .line-r {
+        display: none;
+        overflow: hidden;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    /* .newsletter input {
+        border: 1px solid #000;
+        border-radius: 0px;
+        background: #fff;
+    } */
+}
