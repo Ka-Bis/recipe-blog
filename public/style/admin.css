@@ -1,3 +1,15 @@
+p,
+a {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 17px;
+    color: rgb(224, 217, 217);
+
+}
+
+a {
+    color: #000;
+}
+
 a:hover {
     text-decoration: none;
 
