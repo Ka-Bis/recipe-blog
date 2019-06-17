@@ -22,8 +22,7 @@
 
 <body>
     <div class="container">
-
-        <a href="#"><img class="t mx-0" src="./public/img/logo.png"></a>
+        <a href="/index.html"><img class="t mx-0 img-fluid" src="./public/img/logo.png"></a>
     </div>
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light mt-3 fixed-top">
         <button class="navbar-toggler" id="toggle-btn" type="button" data-toggle="collapse"
@@ -35,10 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav mr-auto">
                 <div class="nav-item active" id="nav-hidden">
-                    <a class="nav-link nav-active" href="#">Home <span class="sr-only">(current)</span></a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" id="items" href="#">All Recipes</a>
+                    <a class="nav-link nav-active" href="/index.html">Home <span class="sr-only">(current)</span></a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" id="items" href="#">Contact</a>
@@ -47,22 +43,99 @@
                     <a class="nav-link" id="items" href="#">About</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" id="items" href="#">Sign In</a>
+                    <a class="nav-link" id="items" href="#connexion" data-toggle="modal">Login</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" id="items" href="#">Sign Up</a>
+                    <a class="nav-link" id="items" href="#inscription" data-toggle="modal">Sign Up</a>
                 </div>
-                <!-- <div class="nav-item">
-                            <p class="nav-link text-secondary" href="#">
-                                <a class="" href="#">Sign In</a> | <a class="" href="#">Sign Up</a>
-                            </p>
-                        </div> -->
             </div>
         </div>
         <div class="nav-item" id="search-toggle">
             <a href="" class="nav-link col"><i class="fas fa-search"></i></a>
         </div>
     </nav>
+
+    <!-- ++++++ MODAL ++++++ -->
+
+    <!-- Modal Connexion-->
+    <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="font-family: 'Noto sans HK'"> Connexion</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="container">
+                    <div class="row d-block mx-auto">
+                        <form action="" method="POST">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                                        style="font-family: 'Noto sans HK'" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="password" name="password" class="form-control"
+                                        placeholder="Mot de passe" style="font-family: 'Noto sans HK'" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="reset" class="btn btn-secondary" data-dismiss="modal"
+                                    style="font-family: Noto sans HK" value="Annuler"></input>
+                                <input type="submit" class="btn btn-success" style="font-family: Noto sans HK"
+                                    value="Connexion"></input>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Inscription -->
+    <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="font-family: 'Noto sans HK'">Inscription</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/recipe.html" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group mx-auto">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Nom" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" class="form-control"
+                                placeholder="Mot de passe" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password2" name="password2" class="form-control"
+                                placeholder="Confirmation du mot de passe" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="reset" class="btn btn-secondary" data-dismiss="modal" value="Annuler"></input>
+                        <input type="submit" class="btn btn-success" value="S'inscrire"></input>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <header>
         <section id="page-title" class="" data-0="background-position:0px -200px;"
@@ -81,33 +154,81 @@
             <div class="container">
                 <div class="card noborder" style="top: -100px;">
                     <div class="card-body px-4">
-                        <div class="row clearfix">
+                        <div class="row align-items-center clearfix">
                             <div class="col-4 col-md pr-3 py-2">
-                                <h6 class="text-black-50 uppercase font-body t400 ls1 mb-1">Difficult</h6>
+                                <h6 class="text-black-50 uppercase mb-1">Difficult</h6>
                                 <h4 class="mb-0">Easy</h4>
                             </div>
                             <div class="col-4 col-md px-3 py-2">
-                                <h6 class="text-black-50 uppercase font-body t400 ls1 mb-1">Ingredient</h6>
+                                <h6 class="text-black-50 uppercase mb-1">Ingredients</h6>
                                 <h4 class="mb-0">10</h4>
                             </div>
                             <div class="col-4 col-md px-3 py-2">
-                                <h6 class="text-black-50 uppercase font-body t400 ls1 mb-1">Time</h6>
-                                <h4 class="mb-0">20min</h4>
+                                <h6 class="text-black-50 uppercase mb-1">Time</h6>
+                                <h4 class="mb-0">30 min</h4>
                             </div>
                             <div class="col-4 col-md px-3 py-2">
-                                <h6 class="text-black-50 uppercase font-body t400 ls1 mb-1">For</h6>
-                                <h4 class="mb-0">5 pers.</h4>
+                                <h6 class="text-black-50 uppercase mb-1">For</h6>
+                                <h4 class="mb-0">4 pers</h4>
                             </div>
                             <div class="col-4 col-md px-3 py-2">
-                                <a href="#" class="btn btn-primary m-0"><i class="icon-line-cloud-download"></i>
-                                    Download</a>
+                                <h6 class="text-black-50 uppercase mb-1">Price</h6>
+                                <h4 class="mb-0">20 €</h4>
                             </div>
+                            <div class="col-4 col-md px-3 py-2">
+                                <h6 class="text-black-50 uppercase mb-1">Views</h6>
+                                <h4 class="mb-0">260</h4>
+                            </div>
+                            <div class="col-4 col-md px-3 py-2">
+                                <a href="#" class="btn btn-primary rounded-pill px-4 m-0">Download</a>
+                            </div>
+                        </div>
+                        <div class="line mx-auto"></div>
+                        <!--line-->
+                        <div class="row justify-content-between mt-5 mb-4 clearfix">
+                            <div class="col-lg-4 py-2">
+                                <div class="ingredient p-3">
+                                    <h2 class="pb-3">Ingredients</h2>
+                                    <ul>
+                                        <li>Saumon (x6)</li>
+                                        <li>1/2 concombre</li>
+                                        <li>ciboulette</li>
+                                        <li>Oeuf de limp noirs</li>
+                                        <li>1 citron</li>
+                                        <li>4 c.a.s de creme fraiche 15% MG</li>
+                                        <li>2 fromage blanc 20% MG</li>
+                                        <li>Poivre</li>
+                                        <li>Sel</li>
+                                    </ul>
+                                </div>
+                                <div class="line mx-auto"></div>
+                            </div>
+                            <div class="col-lg-8 py-2 ">
+                                <div class="preparation p-3">
+
+                                    <h2 class="pb-3">Preparation</h2>
+                                    <ol>
+                                        <li>Couper les tranches de saumon en lamelles (pas trop longues).</li>
+                                        <li>Couper le concombre en deux dans le sens de la longueur et enlever les
+                                            graines,
+                                            puis le râper avec une mandoline avec des trous assez gros.</li>
+                                        <li>Presser le jus d'un citron et verser dans un bol avec un peu de sel, de
+                                            poivre
+                                            et la ciboulette.</li>
+                                        <li>Mélanger délicatement avec la crème fraîche et les fromages blancs.</li>
+                                        <li>Ajouter le concombre et mélanger.</li>
+                                        <li>Répartissez la crème dans les verres, puis le saumon en lanières et les
+                                            oeufs de
+                                            lumps.</li>
+                                        <li>Placer les verrines 6 heures au frais jusqu'à dégustation.</li>
+                                    </ol>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
-                <!-- c'est quoi l'adresse de ton tamplate deja ? -->
-                <!-- http://themes.semicolonweb.com/html/canvas/demos/recipes/recipe-single.html -->
             </div>
         </section>
     </main>

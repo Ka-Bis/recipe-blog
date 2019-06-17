@@ -10,6 +10,14 @@ h2 {
     font-size: 30px;
 }
 
+h4,
+h6 {
+    font-family: 'Noto Sans HK', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(224, 217, 217);
+}
+
 p,
 a {
     font-family: 'Noto Sans HK', sans-serif;
@@ -28,9 +36,21 @@ a:hover {
     color: rgb(79, 73, 134);
 }
 
+input,
+button {
+    font-family: 'Noto sans HK'
+}
+
 .nott {
     color: #fff;
     font-size: 50px;
+}
+
+.line {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    border-top: 1px solid rgb(197, 197, 197);
 }
 
 /* +++++ NAVBAR +++++ */
@@ -81,6 +101,12 @@ a:hover {
 
 }
 
+/* ======== */
+.description {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-weight: 500;
+    color: #000;
+}
 
 /* ========= FOOTER ========= */
 .footer {
@@ -104,11 +130,6 @@ a:hover {
         right: 1em;
         top: 0.5em;
 
-    }
-
-    .line-r {
-        display: none;
-        overflow: hidden;
     }
 
     .card-title {

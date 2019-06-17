@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/bcbef096d6.js"></script>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK:100,300,400,500,700|Noto+Serif:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/style/admin.css">
+    <title>Panel</title>
+</head>
+
+<body>
+
+    <nav>
+        <span class="disconnect">
+            <a href="#" data-toggle="modal" data-target="#disconnect-me">Se deconnecter</a>
+        </span>
+        <div class="toggle-wrap">
+            <span class="toggle-bar"></span>
+        </div>
+    </nav>
+    <aside>
+        <a href="../admin/admin.html">Validation</a>
+        <a href="../admin/user.html">Gestion des Utilisateurs</a>
+        <a href="../admin/online.html">Annonces en ligne</a>
+        <a href="../admin/#.html">Ajouter une annonce</a>
+    </aside>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="admin-title mx-auto mt-4">
+                    <h3>-Annonce en ligne-</h3>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Auteur</th>
+                                <th scope="col">Supprimer l'annonce</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#ad-Modal">Macbook pro</a>
+                                </td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#ad-Modal">Mac book pro tres peut
+                                        utiliser...</a>
+                                </td>
+                                <td>
+                                    Brayan
+                                </td>
+                                <td>
+                                    <a href="#" class="pl-2"><i class="fas fa-times text-danger"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal  partial-->
+    <div class="modal fade" id="ad-Modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Validation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
+                        <div class="form-group-pic">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-10 offset-md-2">
+                                        <img src="./ressources/img/img_2.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="text-align: center">
+                            <h3>Macbook pro</h3>
+                            <h5>Description</h5>
+                            <p>MacBook Pro 15 pouces Touchbar dans un etat neuf avec sa facture. Le mac a été utilisé
+                                utilisé pour le MAO. Encore garanti AppleCare jusqu'en 2020.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------ -->
+
+
+    <!-- disconnect partial ! -->
+    <div class="modal fade" id="disconnect-me" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Me déconnecter</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <p>Voulez vous vraiment vous déconnecter ?</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <a href="#" class="btn btn-info">Se déconnecter</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------- -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="../public/js/toggle.js"></script>
+</body>
+
+</html>
