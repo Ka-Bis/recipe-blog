@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/bcbef096d6.js"></script>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+HK:100,300,400,500,700|Noto+Serif:400,700&display=swap"
+        rel="stylesheet">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./public/style/reset.css">
+    <link rel="stylesheet" href="./public/style/style.css">
+    <title>Add recipe</title>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" id="toggle-btn" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="navbar-nav">
+                <div class="nav-item active">
+                    <a class="nav-link nav-active" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                </div>
+                <!-- <div class="nav-item">
+                    <a class="nav-link" href="#">Add recipe</a>
+                </div> -->
+            </div>
+            <div class="nav-item ml-auto">
+                <a href="/index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- POST RECIPE CARD -->
+            <div class="card mt-5 mx-auto mb-2 rounded-0">
+                <div class="card-header bg-card-header d-flex justify-content-between align-items-start">
+                    <h3 class="card-title mx-auto">Ajouter une recette</h3>
+                </div>
+        
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control rounded-0" placeholder="Titre" name="title">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select id="inputState" class="form-control rounded-0 custom-select" name="categorie"
+                                    style="font-family: 'Noto sans HK'">
+                                    <option selected>Categorie</option>
+                                    <option>Breakfast & Brunch</option>
+                                    <option>Cocktail</option>
+                                    <option>Desserts</option>
+                                    <option>Entrées</option>
+                                    <option>Fruit de mer</option>
+                                    <option>Plat principal</option>
+                                    <option>Salades</option>
+                                    <option>Soupes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="" class="ml-1 input-group h5">Description de la recette</label>
+                            <div class="form-group col-md-3">
+                                <select id="inputState" class="form-control rounded-0" name="difficult"
+                                    style="font-family: 'Noto sans HK'" required>
+                                    <option selected>---Difficulté---</option>
+                                    <option>Facile</option>
+                                    <option>Moyen</option>
+                                    <option>Difficile</option>
+                                    <option>Steven</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <input type="number" class="form-control rounded-0" name="ingredient"
+                                    placeholder="Nb Ingredients" required>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <input type="number" class="form-control rounded-0" name="time" placeholder="Temps" required>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <input type="number" class="form-control rounded-0" name="person" placeholder="Nb pers." required>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <div class="input-group">
+                                    <input type="number" class="form-control rounded-0" placeholder="Prix" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">€</span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="h5">Liste des ingredients</label>
+                            <input type="text" class="form-control rounded-0" placeholder="Ananas, Poulet, Kiwi, ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="h5">Preparation de la recette</label>
+                            <textarea name="recipe" id="" cols="30" rows="4" class="form-control rounded-0"></textarea>
+                        </div>
+                        <div class="form-group float-right">
+                            <input type="reset" value="Annuler" class="btn btn-outline-danger">
+                            <input type="submit" class="btn btn-outline-info px-4"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>

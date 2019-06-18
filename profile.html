@@ -20,45 +20,85 @@
 </head>
 
 <body class="profile-page">
-  <main role="main" class="container">
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel">Edit profile</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form action="" method="POST">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col">
-                  <label for="">Name</label>
-                  <input type="text" class="form-control" placeholder="First name" value="Dylan Reid">
-                </div>
-                <div class="col">
-                  <label for="">Position</label>
-                  <input type="text" class="form-control" placeholder="Position" value="La Roche sur Yon, France">
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <textarea name="description" class="form-control" cols="30" rows="4" placeholder="Description"
-                  style="font-family: 'Noto sans HK'"></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </form>
+  <!-- ++++++ MODAL ++++++ -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Modifier le profil</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <form action="" method="POST">
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-7">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="dylan.reid51@example.com">
+              </div>
+              <div class="form-group col-md-5">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Name</label>
+                <input type="text" class="form-control" placeholder="Dylan Reid">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputZip">City</label>
+                <input type="text" class="form-control" placeholder="La Roche sur Yon">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="">Description</label>
+                <textarea name="description" class="form-control" cols="30" rows="4"
+                  placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam praesentium consequatur quaerat nobis minus cupiditate, beatae alias autem odio illum reiciendis harum adipisci laborum? Eos exercitationem nulla itaque hic."></textarea>
+              </div>
+              <div class="form-group col-md-6">
+                <label class="btn btn-outline-dark rounded-0">
+                  <i class="fa fa-image"></i> Change profile image<input type="file" style="display: none;"
+                    class="form-control" name="image">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Save changes</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <a href="/index.html" class="return">Retour à la page d'accueil</a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" id="toggle-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="navbar-nav">
+        <div class="nav-item active">
+          <a class="nav-link nav-active" href="/index.html">Home <span class="sr-only">(current)</span></a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#">Add recipe</a>
+        </div>
+      </div>
+      <div class="nav-item ml-auto">
+        <a href="/index.html" class="nav-link">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <!-- PROFILE CARD -->
     <div class="card rounded-0 mt-3">
       <div class="card-body">
         <div class="row">
@@ -66,7 +106,7 @@
             <img src="./public/user/user1.jpg" alt="Joyce" class="img-fluid profile-img">
           </div>
           <div class="col-md-10 card-content">
-            <a href="#" class="float-right setting" data-toggle="modal" data-target="#exampleModal"><i
+            <a href="#" class="setting" data-toggle="modal" data-target="#exampleModal"><i
                 class="fas fa-ellipsis-h"></i></a>
             <h2 class="mb-2">Dylan Reid</h2>
             <p class="mb-1 text-dark"><i class="fas fa-envelope"></i> dylan.reid51@example.com</p>
@@ -80,7 +120,8 @@
       </div>
     </div>
 
-    <div class="card mt-5 mx-auto" style="max-width: 740px;">
+    <!-- POST RECIPE CARD -->
+    <div class="card mt-5 mx-auto mb-2" style="max-width: 740px;">
       <div class="card-header d-flex justify-content-between align-items-start">
         <h3 class="card-title">Post</h3>
         <a class="btn btn-light btn-sm float-right" href="#" role="button">
@@ -113,7 +154,7 @@
             <div class="card mb-3 rounded-0 mx-auto" style="max-width: 640px">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img src="./public/img/food1.jpg" class="card-img profile-article-image rounded-0" alt="...">
+                  <img src="./public/img/food2.jpg" class="card-img profile-article-image rounded-0" alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">

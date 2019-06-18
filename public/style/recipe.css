@@ -102,6 +102,9 @@ button {
 }
 
 /* ======== */
+.ingredient {
+    background-color: #dbdbdb;
+}
 .description {
     font-family: 'Noto Sans HK', sans-serif;
     font-weight: 500;

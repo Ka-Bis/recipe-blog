@@ -60,9 +60,9 @@ button {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: none;
-    /* text-decoration: underline!important; */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+    color: black;
+    text-decoration: underline!important;
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.664); */
 }
 
 #search-toggle {
@@ -107,6 +107,11 @@ li {
     font-family: 'Noto sans HK', sans-serif;
 }
 
+input,
+button,label {
+    font-family: 'Noto sans HK'
+}
+
 input [type="submit"] {
     font-family: 'Noto sans HK', sans-serif;
 }
@@ -149,10 +154,9 @@ input [type="submit"] {
 } */
 
 .line {
-
     position: relative;
     width: 90%;
-    margin: 20px 0;
+    margin : 1em 0;
     border-top: 1px solid rgb(201, 197, 197);
 }
 
@@ -175,9 +179,7 @@ input [type="submit"] {
 
 .food-img {
     max-width: 100%;
-    /* max-width: 406.25px; */
     max-height: 274.61px
-        /* max-height: 60%; */
 }
 
 .card {
@@ -241,16 +243,22 @@ input [type="submit"] {
     height: 100%;
 }
 
-.return {
-    position: absolute;
-    left: 1em;
-    color: #dbdbdb;
-    /* margin-top: 1em; */
-}
+
 
 .setting {
     color: #dbdbdbc9;
-    font-weight: 100 !important;
+    float: right;
+}
+
+
+/*  ======*/
+.bg-card-header {
+    background-image: url('../img/food1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background: red; */
+    padding: 10vh 0;
 }
 
 /* ========= FOOTER ========= */
