@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 /* ========= GENERAL ========= */
 h1 {
     font-family: 'Noto Serif', serif;
@@ -61,7 +63,7 @@ button {
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: black;
-    text-decoration: underline!important;
+    text-decoration: underline !important;
     /* border-bottom: 2px solid rgba(0, 0, 0, 0.664); */
 }
 
@@ -108,13 +110,16 @@ li {
 }
 
 input,
-button,label {
-    font-family: 'Noto sans HK'
-}
-
-input [type="submit"] {
+button,
+label,
+textarea,
+.input-group-text {
     font-family: 'Noto sans HK', sans-serif;
 }
+
+/* input [type="submit"] {
+    font-family: 'Noto sans HK', sans-serif;
+} */
 
 .insta-feed h2 {
     margin: 0 auto;
@@ -156,7 +161,7 @@ input [type="submit"] {
 .line {
     position: relative;
     width: 90%;
-    margin : 1em 0;
+    margin: 1em 0;
     border-top: 1px solid rgb(201, 197, 197);
 }
 
@@ -243,22 +248,76 @@ input [type="submit"] {
     height: 100%;
 }
 
-
-
 .setting {
     color: #dbdbdbc9;
     float: right;
 }
 
+/*  ====== Add recipe*/
+.addRecipe {
+    /* background: red; */
+    background-image: url('../img/food6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* height: 20vh; */
+}
 
-/*  ======*/
 .bg-card-header {
-    background-image: url('../img/food1.jpg');
+    background-image: url('../img/woods.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     /* background: red; */
     padding: 10vh 0;
+}
+
+.bg-card-header .card-title {
+    color: rgba(211, 205, 205, 0.74);
+}
+
+.tag-container {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 6px;
+    overflow-x: scroll;
+}
+
+.tag-container .tag {
+    height: 30px;
+    margin: 5px;
+    padding: 5px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    color: #333;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
+    cursor: default;
+    font-family: 'Noto sans HK', sans-serif;
+    text-transform: none;
+}
+
+.tag i {
+    font-size: 16px;
+    color: #666;
+    margin-left: 5px;
+}
+
+.tag-container #ingredient {
+    padding: 5px;
+    font-size: 16px;
+    /* border: 0; */
+    outline: none;
+    font-family: 'Noto sans HK', sans-serif;
+    color: #333;
+    flex: 1;
 }
 
 /* ========= FOOTER ========= */
