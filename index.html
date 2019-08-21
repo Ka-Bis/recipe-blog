@@ -17,14 +17,11 @@
     <!-- STYLE -->
     <link rel="stylesheet" href="./public/style/reset.css">
     <link rel="stylesheet" href="./public/style/style.css">
-    <title>Recipe blog</title>
+    <title>Recipy</title>
+
 </head>
 
 <body>
-    <div class="container">
-
-        <a href="/index.html"><img class="t mx-0 img-fluid" src="./public/img/logo.png"></a>
-    </div>
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light mt-3 fixed-top">
         <button class="navbar-toggler" id="toggle-btn" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,21 +35,35 @@
                     <a class="nav-link nav-active" href="/index.html">Home <span class="sr-only">(current)</span></a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#connexion" data-toggle="modal">Login</a>
+                    <a class="nav-link" href="#connexion" data-toggle="modal">Connexion</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#inscription" data-toggle="modal">Sign Up</a>
+                    <a class="nav-link" href="#inscription" data-toggle="modal">Inscription</a>
                 </div>
                 <div class="nav-item">
-                    <a href="/profile.html" class="nav-link">(Profile)</a>
+                    <a href="/addRecipe.html" class="nav-link">Ajouter une recette</a>
                 </div>
-                <div class="nav-item">
-                    <a href="/profile.html" class="nav-link">(Logout)</a>
+                <div id="nav" style="display: flex">
+                    <div class="nav-item">
+                        <a href="/admin/admin.html" class="nav-link">(Admin)</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/profile.html" class="nav-link">(Profil)</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/index.html" class="nav-link">(Deconnexion)</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="nav-item" id="search-toggle">
-            <a href="" class="nav-link col"><i class="fas fa-search"></i></a>
+            <a class="nav-link col input-group" onclick="hideshow()"><i class="fas fa-search"></i></a>
+        </div>
+
+        <div class="nav-item" id="searchbar" style="display: none;">
+            <form action="/search" method="GET">
+                <input type="search" name="search" class="form-control" placeholder="Recherche...">
+            </form>
         </div>
     </nav>
 
@@ -74,7 +85,7 @@
                         <form action="" method="POST">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                                    <input type="email" name="email" class="form-control" placeholder="Email"
                                         style="font-family: 'Noto sans HK'" />
                                 </div>
                                 <div class="form-group">
@@ -111,12 +122,10 @@
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="form-group mx-auto col-md-7">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom"
-                                    required />
+                                <input type="text" name="name" class="form-control" placeholder="Nom" required />
                             </div>
                             <div class="form-group mx-auto col-md-5">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Prenom"
-                                    required />
+                                <input type="text" name="name" class="form-control" placeholder="Prenom" required />
                             </div>
                         </div>
                         <div class="form-group">
@@ -125,8 +134,8 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input type="password" id="password" name="password" class="form-control"
-                                    placeholder="Mot de passe" required />
+                                <input type="password" name="password" class="form-control" placeholder="Mot de passe"
+                                    required />
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="password" id="password2" name="password2" class="form-control"
@@ -153,10 +162,8 @@
             <div class="container clearfix">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1 class="nott mt-5 mb-3" data-animate="zoomIn">Recipes</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti at perspiciatis vitae
-                            quos? Dolorum sed quidem consequatur. Pariatur, error similique sapiente eum ipsa, placeat
-                            dolores obcaecati odit officiis, ipsam consectetur?</p>
+                        <h1 class="nott mt-5 mb-3" data-animate="zoomIn">Recipy</h1>
+                        <p>Qu'est ce que Recipy ? C'est un site où l'on peut partager nos recette de cuisine</p>
                     </div>
                 </div>
             </div>
@@ -229,7 +236,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="line-r mx-auto"></div>
+                                <!-- <div class="line-r mx-auto"></div> -->
                                 <!-- CARD -->
                                 <div class="col-sm-4 col-6">
                                     <div class="card recipe" style="border-radius: none">
@@ -284,7 +291,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="line-r mx-auto"></div>
+                                <!-- <div class="line-r mx-auto"></div> -->
                                 <!-- CARD -->
                                 <div class="col-sm-4 col-6">
                                     <div class="card recipe">
@@ -346,7 +353,7 @@
                         <!-- SIDEBAR -->
                         <div class="col-lg-3">
                             <div class="list-recipe pt-2">
-                                <h2>Categories</h2>
+                                <!-- <h2>Categories</h2>
                                 <div class="line mx-auto"></div>
                                 <ul>
                                     <li><a href="#">Breakfast & Brunch</a></li>
@@ -357,11 +364,10 @@
                                     <li><a href="#">Plat principal</a></li>
                                     <li><a href="#">Salades</a></li>
                                     <li><a href="#">Soupes</a></li>
-                                </ul>
+                                </ul> -->
                                 <div class="line mx-auto"></div>
-                                <h2>Subscribe For Latest Offers</h2>
-                                <p>Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:
-                                </p>
+                                <h2>Newsletter</h2>
+                                <p>Abonnez-vous à notre newsletter : </p>
                                 <!-- <form action="#" method="POST" class="newsletter">
                                     <input type="text" name="letter" placeholder="email@hotmail.fr">
                                     <input class="btn btn-success" type="submit" value="Send"></input>
@@ -370,7 +376,7 @@
                                     <div class="input-group mx-auto">
                                         <input type="email" class="form-control mr-1 px-3 newsletter"
                                             placeholder="example@lorem.com">
-                                        <input type="submit" class="btn btn-secondary mb-2 px-4" value="Send">
+                                        <input type="submit" class="btn btn-secondary mb-2 px-4 rounded-0" value="Send">
                                     </div>
                                 </form>
                                 <div class="line mx-auto"></div>
@@ -507,10 +513,12 @@
     </main>
 
     <footer class="footer">
-        2019 &copy; Recipe blog
+        2019 &copy; Recipy
     </footer>
 
-
+    <!-- SCRIPT -->
+    <script src="./public/js/hideshow.js"></script>
+    <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
