@@ -15,132 +15,146 @@
         href="https://fonts.googleapis.com/css?family=Noto+Sans+HK:100,300,400,500,700|Noto+Serif:400,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../public/style/admin.css">
+
     <title>Panel</title>
 </head>
 
 <body>
-
-    <nav>
-        <span class="disconnect">
-            <a href="#" data-toggle="modal" data-target="#disconnect-me">Se deconnecter</a>
-        </span>
-        <div class="toggle-wrap">
-            <span class="toggle-bar"></span>
-        </div>
+    <nav class="py-3 navbar navbar-light logout-nav fixed-top">
+        <a href="#menu-toggle" class="border-0 border-white rounded text-white px-3 py-2 text-decoration-none"
+            id="menu-toggle"><i class="fas fa-bars"></i></a>
+        <a href="#disconnect-me" class="nav-item ml-auto logout" data-toggle="modal">Se deconnecter</a>
     </nav>
-    <aside>
-        <a href="../admin/admin.html">Validation</a>
-        <a href="../admin/user.html">Gestion des Utilisateurs</a>
-        <a href="../admin/online.html">Annonces en ligne</a>
-        <a href="../admin/#.html">Ajouter une annonce</a>
-    </aside>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="admin-title mx-auto mt-4">
-                    <h3>-En attente de Validation-</h3>
-                </div>
-            </div>
+    <div id="wrapper">
+        <!-- SIDEBAR -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand mt-5">
+                    <a href="/">Accueil</a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard">Gestion des posts</a>
+                </li>
+                <li>
+                    <a href="/admin/user">Gestion des utilisateurs</a>
+                </li>
+                <li>
+                    <a href="/admin/addRecipe">Ajouter une recette</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <section id="page-content-wrapper">
             <div class="container">
                 <div class="row">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Titre</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Auteur</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><a href="#" data-toggle="modal" data-target="#ad-Modal">Macbook pro</a></td>
-                                <td><a href="#" data-toggle="modal" data-target="#ad-Modal">Mac book pro tres peu
-                                        utilisé...</a>
-                                </td>
-                                <td>Brayan</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table tab text-center mx-auto">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Titre de la recette</th>
+                                        <th scope="col">Categorie</th>
+                                        <th scope="col">Auteur</th>
+                                        <th scope="col">Date de création</th>
+                                        <th scope="col">Apperçu de la recette</th>
+                                        <th scope="col">Validation</th>
+                                        <th scope="col">Supprimer post</th>
 
-    <!-- Modal  partial-->
-    <div class="modal fade" id="ad-Modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Validation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">5d5d48d606cdb209b4554368</th>
+                                        <td><a>Lorem</a></td>
+                                        <td><a>Brunch</a></td>
+                                        <td><a>admin</a></td>
+                                        <td><a>22/08/2019</a></td>
+                                        <td style="font-size: 20px">
+                                            <a href="/recipe/{{_id}}" target="_blank">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                        </td>
+                                        <td><button class="btn btn-success" id="valid-{{this.id}}">
+                                                <i class="far fa-check-circle"></i></button></td>
+                                        <td style="font-size: 20px">
+                                            <a href="/admin/delete/{{this._id}}" class="text-danger border-0 rounded-0">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="#" method="POST">
-                        <div class="form-group-pic">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-md-2">
-                                        <img src="./ressources/img/img_2.jpg">
-                                    </div>
+                <div class="remove">
+                    <a href="#modalRemovePostAll" data-toggle="modal"
+                        class="btn btn-outline-danger float-right rounded-0">Supprimer tout les posts</a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalRemovePostAll" tabindex="-1" role="dialog"
+                        aria-labelledby="modalRemovePost" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title h5" id="modalRemove">Supression de post</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/admin/deleteAll" method="post">
+                                        <p>Supprimer tout les posts ?<span
+                                                style="text-transform: capitalize; font-style:italic;"></span></p>
+                                        <div class="modal-footer border-0">
+                                            <button type="reset" class="btn btn-outline-secondary"
+                                                data-dismiss="modal">Annuler</button>
+                                            <button class="btn btn-outline-success" type="submit">Supprimer</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group" style="text-align: center">
-                            <h3>Macbook pro</h3>
-                            <h5>Description</h5>
-                            <p>MacBook Pro 15 pouces Touchbar dans un etat neuf avec sa facture. Le mac a été utilisé
-                                utilisé pour le MAO. Encore garanti AppleCare jusqu'en 2020.</p>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Refusé</button>
-                            <button type="submit" class="btn btn-success">Approuvé</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ------------------------ -->
-
-
-    <!-- disconnect partial ! -->
-    <div class="modal fade" id="disconnect-me" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Me déconnecter</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <p>Voulez vous vraiment vous déconnecter ?</p>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <a href="/index.html" class="btn btn-info">Se déconnecter</a>
                     </div>
-
                 </div>
             </div>
-        </div>
+
+            <div class="modal fade" id="disconnect-me" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title h5" id="exampleModalLabel">Deconnexion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <p class="text-dark">Voulez vous vraiment vous déconnecter ?</p>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <a href="/user/logout" class="btn btn-info">Se déconnecter</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </div>
-    <!-- ---------------- -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>k
+
+    <!-- SCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="../public/js/toggle.js"></script>
 </body>
 
 </html>
