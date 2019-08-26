@@ -358,6 +358,11 @@ textarea,
         text-align: center;
     }
 
+    .food-img {
+        max-width: 100%;
+        min-height: 137.305px;
+        max-height: 137.305px;
+    }
     .profile-card {
         max-width: 240px;
         display: block;
